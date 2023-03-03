@@ -1,0 +1,18 @@
+PROCEDURE isPalindrome(left, right:INTEGER, word: STRING[50])
+
+BEGIN
+  // Stop condition: an empty word or a word containing a single character is a palindrome.
+  IF (word.length = 0  OR left = right) THEN
+    Write("it's palindrome")
+  ELSE
+    // we compare the first and last characters
+    // if equality we test the rest of the word
+    IF (word[left] = word[right]) THEN
+      isPalindrome(left+1, right-1, word)
+    ELSE
+      // if difference we stop
+      Write("it's not palindrome")
+    END_IF
+  END_IF
+END
+
